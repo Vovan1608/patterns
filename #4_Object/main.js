@@ -152,7 +152,7 @@ myarray.inArray([“a”, “b”, “z”], “z”); // 2
 ся функцией namespace(), реализованной выше в этой главе, и создадим
 вспомогательный модуль, содержащий методы для работы с массивами:
 */
-MYAPP.namespace(‘MYAPP.utilities.array’);
+MYAPP.namespace('MYAPP.utilities.array');
 
 /* Следующий шаг – определение модуля. На этом этапе используется не-
 медленно вызываемая функция, образующая частную область видимо-
@@ -188,7 +188,7 @@ MYAPP.utilities.array = (function () {
 ваемой функцией, содержащий общедоступные члены модуля: 
 */
 
-MYAPP.namespace(‘MYAPP.utilities.array’);
+MYAPP.namespace('MYAPP.utilities.array');
 MYAPP.utilities.array = (function () {
 	// зависимости
 	var uobj = MYAPP.utilities.object,
