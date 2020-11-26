@@ -32,7 +32,7 @@ MYAPP.modules.module2 = {};
 //! ======== Универсальная функция для создания пространства имен
 
 // применение функции пространства имен
-MYAPP.namespace(‘MYAPP.modules.module2’);
+MYAPP.namespace("MYAPP.modules.module2");
 // этот вызов эквивалентен следующей конструкции:
 // var MYAPP = {
 // modules: {
@@ -46,16 +46,16 @@ MYAPP.namespace(‘MYAPP.modules.module2’);
 
 var MYAPP = MYAPP || {};
 MYAPP.namespace = function (ns_string) {
-	var parts = ns_string.split(‘.’),
+	var parts = ns_string.split("."),
 			parent = MYAPP,
 			i;
 	// отбросить начальный префикс – имя глобального объекта
-	if (parts[0] === “MYAPP”) {
+	if (parts[0] === "MYAPP") {
 		parts = parts.slice(1);
 	}
 	for (i = 0; i < parts.length; i += 1) {
 	// создать свойство, если оно отсутствует
-		if (typeof parent[parts[i]] === “undefined”) {
+		if (typeof parent[parts[i]] === "undefined") {
 			parent[parts[i]] = {};
 		}
 		parent = parent[parts[i]];
@@ -67,13 +67,13 @@ MYAPP.namespace = function (ns_string) {
 // пользования функции:
 
 // присваивать возвращаемое значение локальной переменной
-var module2 = MYAPP.namespace(‘MYAPP.modules.module2’);
+var module2 = MYAPP.namespace("MYAPP.modules.module2");
 module2 === MYAPP.modules.module2; // true
 // опускать начальный префикс `MYAPP`
-MYAPP.namespace(‘modules.module51’);
+MYAPP.namespace("modules.module51");
 
 // создавать глубоко вложенные пространства имен
-MYAPP.namespace(‘once.upon.a.time.there.was.this.long.nested.property’);
+MYAPP.namespace("once.upon.a.time.there.was.this.long.nested.property");
 
 //! ========== Частные члены
 
@@ -92,7 +92,7 @@ var toy = new Gadget();
 console.log(toy.name); // undefined
 
 // общедоступный метод может обратиться к частному члену `name`
-console.log(toy.getName()); // “iPod”
+console.log(toy.getName()); // "iPod"
 
 // Как видите, в JavaScript можно легко создавать частные члены. Все, что
 // для этого необходимо, – обернуть данные, которые вы хотели бы оста-
@@ -137,14 +137,14 @@ var myarray;
 
 myarray.isArray([1,2]); // true
 myarray.isArray({0: 1}); // false
-myarray.indexOf([“a”, “b”, “z”], “z”); // 2
-myarray.inArray([“a”, “b”, “z”], “z”); // 2
+myarray.indexOf(["a", "b", "z"], "z"); // 2
+myarray.inArray(["a", "b", "z"], "z"); // 2
 
 // Если теперь произойдет, например, что-то неожиданное с общедоступ-
 // ным методом indexOf(), частный метод indexOf() останется нетронутым,
 // благодаря чему метод inArray() сохранит свою работоспособность:
 myarray.indexOf = null;
-myarray.inArray([“a”, “b”, “z”], “z”); // 2
+myarray.inArray(["a", "b", "z"], "z"); // 2
 
 //!========== Шаблон «модуль»
 
