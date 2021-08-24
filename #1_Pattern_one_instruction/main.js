@@ -17,7 +17,7 @@ function func() {
 	}
 
 function updateElement() {
-	var el = document.getElementById(“result”),
+	var el = document.getElementById('result'),
 			style = el.style;
 	// Выполнение операций над переменными el и style...
 }

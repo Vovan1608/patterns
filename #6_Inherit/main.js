@@ -144,7 +144,7 @@ function extendDeep(parent, child) {
 	child = child || {};
 	for (i in parent) {
 		if (parent.hasOwnProperty(i)) {
-			if (typeof parent[i] === “object”) {
+			if (typeof parent[i] === 'object') {
 				child[i] = (toStr.call(parent[i]) === astr) ? [] : {};
 				extendDeep(parent[i], child[i]);
 			} else {

@@ -14,7 +14,7 @@ var findNodes = function (callback) {
 	nodes = [],
 	found;
 	// проверить, является ли объект callback функцией
-	if (typeof callback !== “function”) {
+	if (typeof callback !== 'function') {
 	callback = false;
 	}
 	while (i) {
@@ -45,7 +45,7 @@ findNodes(hide);
 var setup = function () {
 	var count = 0;
 	return function () {
-		return (count += 1);
+		return count += 1;
 	};
 };
 // пример использования
